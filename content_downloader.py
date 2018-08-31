@@ -4,7 +4,7 @@ import string
 import time
 
 from pytube import YouTube	# https://github.com/nficano/pytube | pip install pytube
-import praw					# https://github.com/praw-dev/praw  | pip install praw
+import praw			# https://github.com/praw-dev/praw  | pip install praw
 import prawcore.exceptions
 
 
