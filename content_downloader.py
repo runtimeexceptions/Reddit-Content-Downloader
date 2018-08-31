@@ -8,7 +8,7 @@ import praw			# https://github.com/praw-dev/praw  | pip install praw
 import prawcore.exceptions
 
 
-reddit = praw.Reddit('Config', user_agent = 'win:Mz_vF08B4gyXVw:v.5 by /u/runtime_exceptions')
+reddit = praw.Reddit('Config', user_agent = 'win:v.5 by /u/runtime_exceptions')
 
 pic_filetypes = ('.png', '.jpg', '.jpeg', '.tiff', '.bmp', '.bpg') # Some these filetypes have not been tested
 gif_filetypes = ('.gif', '.gifv')
