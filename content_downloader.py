@@ -58,8 +58,8 @@ def main():
 					i += 1
 					download(submission, url, 'gif', num_posts, i)
 				
+				# Download (youtube) videos
 				else:
-					# Download (youtube) videos
 					try:
 						if download_vids and 'youtube' in submission.media['type']:
 							i += 1
@@ -98,12 +98,12 @@ def main():
 	
 
 def download(submission, url, tag, num_posts, i):
-			response = requests.get(url)
-			if response.ok:
-				filename = formatFileName('['+submission.subreddit.display_name+' '+tag+'] ' + submission.title, pathlib.Path(url).suffix)
-				with open(filename, 'wb') as file:
-					file.write(response.content)
-				print(formatDownloadProgress('Downloaded ', filename, i/num_posts))
+	response = requests.get(url)
+	if response.ok:
+		filename = formatFileName('['+submission.subreddit.display_name+' '+tag+'] ' + submission.title, pathlib.Path(url).suffix)
+		with open(filename, 'wb') as file:
+			file.write(response.content)
+		print(formatDownloadProgress('Downloaded ', filename, i/num_posts))
 			
 			
 def formatDownloadProgress(state, filename, percent):
@@ -121,16 +121,16 @@ def formatFileName(title, filetype_ending):
 
 
 def getContentInput(prompt):
-		while True:
-			user_input = input(prompt).lower()
-			if 'y' in user_input:
-				return True
-			elif 'n' in user_input:
-				return False
-			else:
-				print('Invalid input. Please type y or n')
-				continue
-			break
+	while True:
+		user_input = input(prompt).lower()
+		if 'y' in user_input:
+			return True
+		elif 'n' in user_input:
+			return False
+		else:
+			print('Invalid input. Please type y or n')
+			continue
+		break
 		
 
 if __name__ == '__main__':
